@@ -135,12 +135,13 @@ SCF 			|00 110 111|		0x37
 CCF 			|00 111 111|		0x3F
 
 * * *
-## X=1
 
-In this table all operations are LD r,r where r = A, B, C, D, E, H, L or (HL). Except for HALT, which substitutes LD (HL),(HL).
+## X=1 and Y=0
+
+LD B,r
 
 |Mmemonic | x y z | Hex
-| :------- | :---------:   | :---: |
+| :------- | :---------:   | :---: | 
 LD B,B			|01 000 000|		0x40
 LD B,C			|01 000 001|		0x41
 LD B,D			|01 000 010|		0x42
@@ -149,6 +150,15 @@ LD B,H			|01 000 100|		0x44
 LD B,L			|01 000 101|		0x45
 LD B,(HL)		|01 000 110|		0x46
 LD B,A			|01 000 111|		0x47
+
+* * *
+
+## X=1 and Y=1
+
+LD C,r
+
+|Mmemonic | x y z | Hex
+| :------- | :---------:   | :---: | 
 LD C,B			|01 001 000|		0x48
 LD C,C			|01 001 001|		0x49
 LD C,D			|01 001 010|		0x4A
@@ -157,6 +167,15 @@ LD C,H			|01 001 100|		0x4C
 LD C,L			|01 001 101|		0x4D
 LD C,(HL)		|01 001 110|		0x4E
 LD C,A			|01 001 111|		0x4F
+
+* * *
+
+## X=1 and Y=2
+
+LD D,r
+
+|Mmemonic | x y z | Hex
+| :------- | :---------:   | :---: | 
 LD D,B			|01 010 000|		0x50
 LD D,C			|01 010 001|		0x51
 LD D,D			|01 010 010|		0x52
@@ -165,6 +184,15 @@ LD D,H			|01 010 100|		0x54
 LD D,L			|01 010 101|		0x55
 LD D,(HL)		|01 010 110|		0x56
 LD D,A			|01 010 111|		0x57
+
+* * *
+
+## X=1 and Y=3
+
+LD E,r
+
+|Mmemonic | x y z | Hex
+| :------- | :---------:   | :---: | 
 LD E,B			|01 011 000|		0x58
 LD E,C			|01 011 001|		0x59
 LD E,D			|01 011 010|		0x5A
@@ -173,6 +201,15 @@ LD E,H			|01 011 100|		0x5C
 LD E,L			|01 011 101|		0x5D
 LD E,(HL)		|01 011 110|		0x5E
 LD E,A			|01 011 111|		0x5F
+
+* * *
+
+## X=1 and Y=4
+
+LD H,r
+
+|Mmemonic | x y z | Hex
+| :------- | :---------:   | :---: | 
 LD H,B			|01 100 000|		0x60
 LD H,C			|01 100 001|		0x61
 LD H,D			|01 100 010|		0x62
@@ -181,6 +218,15 @@ LD H,H			|01 100 100|		0x64
 LD H,L			|01 100 101|		0x65
 LD H,(HL)		|01 100 110|		0x66
 LD H,A			|01 100 111|		0x67
+
+* * *
+
+## X=1 and Y=5
+
+LD L,r
+
+|Mmemonic | x y z | Hex
+| :------- | :---------:   | :---: | 
 LD L,B			|01 101 000|		0x68
 LD L,C			|01 101 001|		0x69
 LD L,D			|01 101 010|		0x6A
@@ -189,6 +235,15 @@ LD L,H			|01 101 100|		0x6C
 LD L,L			|01 101 101|		0x6D
 LD L,(HL)		|01 101 110|		0x6E
 LD L,A			|01 101 111|		0x6F
+
+* * *
+
+## X=1 and Y=6
+
+LD (HL),r
+
+|Mmemonic | x y z | Hex
+| :------- | :---------:   | :---: | 
 LD (HL),B		|01 110 000|		0x70
 LD (HL),C		|01 110 001|		0x71
 LD (HL),D		|01 110 010|		0x72
@@ -197,6 +252,15 @@ LD (HL),H		|01 110 100|		0x74
 LD (HL),L		|01 110 101|		0x75
 HALT			|01 110 110|		0x76
 LD (HL),A		|01 110 111|		0x77
+
+* * *
+
+## X=1 and Y=7
+
+LD A,r
+
+|Mmemonic | x y z | Hex
+| :------- | :---------:   | :---: | 
 LD A,B			|01 111 000|		0x78
 LD A,C			|01 111 001|		0x79
 LD A,D			|01 111 010|		0x7A
@@ -207,9 +271,11 @@ LD A,(HL)		|01 111 110|		0x7E
 LD A,A			|01 111 111|		0x7F
 
 * * *
-## X=2
 
-ALU operations between two registers
+## X=2 and Y=0
+
+Add
+
 
 |Mmemonic | x y z | Hex
 | :------- | :---------:   | :---: | 
@@ -221,6 +287,15 @@ ADD A,H			|10 000 100|		0x84
 ADD A,L			|10 000 101|		0x85
 ADD A,(HL)		|10 000 110|		0x86
 ADD A,A			|10 000 111|		0x87
+
+* * *
+
+## X=2 and Y=1
+
+Add with carry
+
+|Mmemonic | x y z | Hex
+| :------- | :---------:   | :---: | 
 ADC A,B			|10 001 000|		0x88
 ADC A,C			|10 001 001|		0x89
 ADC A,D			|10 001 010|		0x8A
@@ -229,6 +304,15 @@ ADC A,H			|10 001 100|		0x8C
 ADC A,L			|10 001 101|		0x8D
 ADC A,(HL)		|10 001 110|		0x8E
 ADC A,A			|10 001 111|		0x8F
+
+* * *
+
+## X=2 and Y=2
+
+Subtract
+
+|Mmemonic | x y z | Hex
+| :------- | :---------:   | :---: | 
 SUB A,B			|10 010 000|		0x90
 SUB A,C			|10 010 001|		0x91
 SUB A,D			|10 010 010|		0x92
@@ -237,6 +321,15 @@ SUB A,H			|10 010 100|		0x94
 SUB A,L			|10 010 101|		0x95
 SUB A,(HL)		|10 010 110|		0x96
 SUB A,A			|10 010 111|		0x97
+
+* * *
+
+## X=2 and Y=3
+
+Subtract with carry
+
+|Mmemonic | x y z | Hex
+| :------- | :---------:   | :---: | 
 SBC A,B			|10 011 000|		0x98
 SBC A,C			|10 011 001|		0x99
 SBC A,D			|10 011 010|		0x9A
@@ -245,6 +338,15 @@ SBC A,H			|10 011 100|		0x9C
 SBC A,L			|10 011 101|		0x9D
 SBC A,(HL)		|10 011 110|		0x9E
 SBC A,A			|10 011 111|		0x9F
+
+* * *
+
+## X=2 and Y=4
+
+Bitwise AND
+
+|Mmemonic | x y z | Hex
+| :------- | :---------:   | :---: | 
 AND A,B			|10 100 000|		0xA0
 AND A,C			|10 100 001|		0xA1
 AND A,D			|10 100 010|		0xA2
@@ -253,6 +355,15 @@ AND A,H			|10 100 100|		0xA4
 AND A,L			|10 100 101|		0xA5
 AND A,(HL)		|10 100 110|		0xA6
 AND A,A			|10 100 111|		0xA7
+
+* * *
+
+## X=2 and Y=5
+
+Bitwise XOR
+
+|Mmemonic | x y z | Hex
+| :------- | :---------:   | :---: | 
 XOR A,B			|10 101 000|		0xA8
 XOR A,C			|10 101 001|		0xA9
 XOR A,D			|10 101 010|		0xAA
@@ -261,6 +372,15 @@ XOR A,H			|10 101 100|		0xAC
 XOR A,L			|10 101 101|		0xAD
 XOR A,(HL)		|10 101 110|		0xAE
 XOR A,A			|10 101 111|		0xAF
+
+* * *
+
+## X=2 and Y=6
+
+Bitwise OR
+
+|Mmemonic | x y z | Hex
+| :------- | :---------:   | :---: | 
 OR A,B			|10 110 000|		0xB0
 OR A,C			|10 110 001|		0xB1
 OR A,D			|10 110 010|		0xB2
@@ -269,6 +389,15 @@ OR A,H			|10 110 100|		0xB4
 OR A,L			|10 110 101|		0xB5
 OR A,(HL)		|10 110 110|		0xB6
 OR A,A			|10 110 111|		0xB7
+
+* * *
+
+## X=2 and Y=7
+
+Compare
+
+|Mmemonic | x y z | Hex
+| :------- | :---------:   | :---: | 
 CP A,B			|10 111 000|		0xB8
 CP A,C			|10 111 001|		0xB9
 CP A,D			|10 111 010|		0xBA
