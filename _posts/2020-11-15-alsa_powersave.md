@@ -6,7 +6,7 @@ categories: "Reference"
 ---
 
 Some speakers may show a buzzing sound when the sound card enters power save mode.
-To avoid this problem you can want to disable the sound card’s power save mode completely
+To avoid this problem you can disable the sound card’s power save mode completely
 
 ## Disable power save in this session only
 
@@ -16,8 +16,8 @@ Open a terminal and **as root** run the following command
 echo 0 > /sys/module/snd_hda_intel/parameters/power_save
 {% endhighlight %}
 
-
 ## Disable power save permanently
+
 To avoid this problem create a file in `/etc/modprobe.d/` named `audio_disable_powersave.conf`
 
 {% highlight sh %}
